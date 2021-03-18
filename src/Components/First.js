@@ -3,6 +3,7 @@ import Axios from 'axios'
 
 const First = () => {
     const [country, setcountry] = useState([])
+    const [search, setsearch] = useState('')
     useEffect(()=>{
         const lol=async()=>{
         await Axios({
@@ -14,14 +15,16 @@ const First = () => {
         }
         lol()
     },[])
+    const update=country.filter((item)=>{
+        return item.name.toLowerCase().includes(search.toLowerCase())
+    })
     return (
         <div>
             hello world, this my first deployed react project 
+            <input type='text' placeholder='search ...' onChange={(e)=>{setsearch(e.target.value)}}/>
             <ol>
-
-           
             {
-                country.map((item,index)=>{return <li key={index}>{item.name}</li>})
+                update.map((item,index)=>{return <li key={index}>{item.name}</li>})
             }
              </ol>
         </div>
