@@ -46,7 +46,7 @@ const First = () => {
         const lol=async()=>{
         await Axios({
             method:'get',
-            url:'http://127.0.0.1:8000/api/'
+            url:'https://bakendapi.herokuapp.com/api/'
         })
         .then((res)=>{console.log(res.data); setcountry(res.data)})
         .catch((err)=>{console.log(err);})
