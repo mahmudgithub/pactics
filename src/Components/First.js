@@ -61,11 +61,11 @@ const First = () => {
         <div>
             hello world, this my first deployed react project 
             {/* <input type='text' placeholder='search ...' onChange={(e)=>{setsearch(e.target.value)}}/> */}
-            <ol>
+            <ul>
             {
-                country.map((item,index)=>{return <li key={index}>{item.name}</li>})
+                country.map((item,index)=>{return <li key={index}>{item.city}</li>})
             }
-             </ol>
+             </ul>
         </div>
     )
 }
